@@ -97,17 +97,21 @@
             font-weight: bold;
         }
         .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .gallery img {
-            width: 100%;
-            max-width: 300px;
-            margin: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
         .video {
             text-align: center;
             margin: 20px 0;
@@ -202,10 +206,10 @@
         <div class="section">
             <h3>Photo Gallery</h3>
             <div class="gallery">
-                <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="George Russell in action">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="F1 Race Track">
-                <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mercedes F1 Car">
-                <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="George Russell Helmet">
+                <img src="gealgeol1.png" alt="George Russell in action">
+                <img src="russel1.jpeg" alt="F1 Race Track">
+                <img src="russel2.jpeg" alt="Mercedes F1 Car">
+                <img src="gealgeol2.png" alt="George Russell Helmet">
             </div>
         </div>
     </div>
