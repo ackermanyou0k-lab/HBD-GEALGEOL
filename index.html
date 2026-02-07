@@ -31,6 +31,32 @@
             font-size: 1.2em;
             margin: 10px 0 0;
         }
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-text {
+    text-align: center;
+    flex: 1;
+}
+
+.header-img {
+    width: 150px; 
+    height: auto;
+}
+
+.left-img {
+    margin-right: 10px;
+}
+
+.right-img {
+    margin-left: 10px;
+}
+
         .hero {
             background-image: url("gealgeol.png");
             background-size: cover;
@@ -163,9 +189,17 @@
 </head>
 <body>
     <header>
-        <h1>Happy Birthday Gea Febrina Hakami!</h1>
-        <p>Celebrate like George Russell on the podium – February 11th</p>
-    </header>
+    <div class="header-content">
+        <img src="chibir.png" class="header-img left-img">
+        
+        <div class="header-text">
+            <h1>Happy Birthday Gea Febrina Hakami!</h1>
+            <p>Celebrate like George Russell on the podium – February 11th</p>
+        </div>
+
+        <img src="chibir1.png" class="header-img right-img">
+    </div>
+</header>
     <div class="hero">
         <h2>HAPPY BIRTH DAY! ITS YOUR 18TH YEARS</h2>
     </div>
