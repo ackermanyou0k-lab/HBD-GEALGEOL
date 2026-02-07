@@ -170,6 +170,24 @@
         .wishes button:hover {
             background: #6C7293;
         }
+        #musicBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#00D2BE;
+    color:white;
+    border:none;
+    padding:12px 18px;
+    border-radius:30px;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
+    z-index:999;
+}
+
+#musicBtn:hover{
+    background:#6C7293;
+}
+
         footer {
             background: #000000;
             color: white;
@@ -188,6 +206,13 @@
     </style>
 </head>
 <body>
+    <audio id="bgMusic" loop>
+    <source src="Seize The Day.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn">🔊 Play Music</button>
+
+
     <header>
     <div class="header-content">
         <img src="chibir.png" class="header-img left-img">
@@ -252,6 +277,34 @@
     </footer>
 
     <script>
+window.addEventListener("load",function(){
+
+/* CONFETTI */
+confetti({
+    particleCount:200,
+    spread:90,
+    origin:{y:.6}
+});
+
+/* MUSIC */
+const music=document.getElementById("bgMusic");
+const btn=document.getElementById("musicBtn");
+
+let playing=false;
+
+btn.onclick=function(){
+
+    if(!playing){
+        music.play();
+        btn.textContent="🔈 Pause Music";
+        playing=true;
+    }else{
+        music.pause();
+        btn.textContent="🔊 Play Music";
+        playing=false;
+    }
+
+};
         const targetDate = new Date('2026-02-11T00:00:00').getTime();
         const countdownElement = document.getElementById('countdown');
 
