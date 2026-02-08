@@ -31,11 +31,11 @@
             font-size: 1.2em;
             margin: 10px 0 0;
         }
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
+	.header-content {
+   	 display: flex;
+ 	 align-items: center;
+  	 justify-content: space-between;
+   	 max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -170,18 +170,19 @@
         .wishes button:hover {
             background: #6C7293;
         }
-        #musicBtn{
+/* ===== MUSIC BUTTON ===== */
+
+#musicBtn{
     position:fixed;
     bottom:20px;
     right:20px;
     background:#00D2BE;
     color:white;
     border:none;
-    padding:12px 18px;
+    padding:12px 20px;
     border-radius:30px;
     cursor:pointer;
-    box-shadow:0 4px 10px rgba(0,0,0,.3);
-    z-index:999;
+    z-index:9999;
 }
 
 #musicBtn:hover{
@@ -206,7 +207,7 @@
     </style>
 </head>
 <body>
-    <audio id="bgMusic" loop>
+<audio id="bgMusic" loop>
     <source src="Seize The Day.mp3" type="audio/mpeg">
 </audio>
 
@@ -276,26 +277,33 @@
         <p>Made by Mizuto and Dhiladelo</p>
     </footer>
 
-    <script>
+    <!-- CONFETTI LIBRARY -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
 window.addEventListener("load",function(){
 
-/* CONFETTI */
+/* 🎉 CONFETTI */
 confetti({
     particleCount:200,
     spread:90,
-    origin:{y:.6}
+    origin:{y:0.6}
 });
 
-/* MUSIC */
-const music=document.getElementById("bgMusic");
-const btn=document.getElementById("musicBtn");
 
-let playing=false;
+/* 🎵 MUSIC */
 
-btn.onclick=function(){
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+let playing = false;
+
+btn.addEventListener("click", function(){
 
     if(!playing){
-        music.play();
+        music.play().catch(err=>{
+            console.log("Play blocked:", err);
+        });
         btn.textContent="🔈 Pause Music";
         playing=true;
     }else{
@@ -304,27 +312,41 @@ btn.onclick=function(){
         playing=false;
     }
 
-};
-        const targetDate = new Date('2026-02-11T00:00:00').getTime();
-        const countdownElement = document.getElementById('countdown');
+});
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
 
-            if (distance > 0) {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s until the celebration!`;
-            } else {
-                countdownElement.innerHTML = "It's time to celebrate!";
-            }
-        }
+/* ⏰ COUNTDOWN */
 
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
+const targetDate = new Date('2026-02-11T00:00:00').getTime();
+const countdownElement = document.getElementById('countdown');
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance > 0) {
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML =
+        `${days}d ${hours}h ${minutes}m ${seconds}s until the celebration!`;
+
+    } else {
+
+        countdownElement.innerHTML = "🎉 It's time to celebrate! 🎂";
+
+    }
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+});
+</script>
+
 </body>
 </html>
