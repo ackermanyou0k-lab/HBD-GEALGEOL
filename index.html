@@ -56,6 +56,41 @@
 .right-img {
     margin-left: 10px;
 }
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-img {
+        width: 100px;
+    }
+
+    .header-text h1 {
+        font-size: 1.8em;
+    }
+
+    .header-text p {
+        font-size: 1em;
+    }
+}
+@media (max-width: 768px) {
+
+    .hero h2 {
+        font-size: 1.4em;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+}
 
         .hero {
             background-image: url("gealgeol.png");
@@ -204,6 +239,23 @@
                 font-size: 2em;
             }
         }
+/* Responsive Video */
+.responsive-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
     </style>
 </head>
 <body>
@@ -227,12 +279,13 @@
     </div>
 </header>
     <div class="hero">
-        <h2>HAPPY BIRTHDAY! IT’S YOUR 18TH YEAR 🎉</h2>
+        <h2>HAPPY BIRTH DAY! ITS YOUR 18TH YEARS</h2>
     </div>
     <div class="content">
         <div class="section">
-            <h3>For You, Gea 🤍</h3>
-           <p>Happy Birthday, Gea 🎉🤍</p>
+            <h3>ABD GEAL GEOL</h3>
+           
+<p>Happy Birthday, Gea 🎉🤍</p>
 It’s crazy to think we’ve known each other for almost 5 years now—maybe we’ve been real, truly close friends for about 2 years. And honestly, those years mean so much to me. High school wouldn’t have been the same without you and all our memories together.</p>
 
 <p>I know things haven’t been the same lately, and I’m really sorry for what happened. I truly regret it. If I could go back, I would definitely do things better. You and our friendships matter more to me than you probably think.</p>
@@ -254,7 +307,6 @@ I love you—not in a romantic way, but in a “you’re really important to me 
 
 <p>Happy Birthday once again, Gea 🤍</p>
 <p>Always cheering for you.</p>
-
             <div class="quote">"If in doubt, go flat out." – George Russell</div>
         </div>
         <div class="section">
@@ -280,7 +332,7 @@ I love you—not in a romantic way, but in a “you’re really important to me 
         </div>
         <div class="section">
             <h3>George Russell Hilarious Moments</h3>
-            <div class="video">
+            <div class="video responsive-video">
                <iframe width="560" height="315" src="https://www.youtube.com/embed/aemZDtO19N0?si=PKf0v2xaYc8aRJk-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <p>Watch George Russell's best funny moments</p>
             </div>
@@ -296,7 +348,7 @@ I love you—not in a romantic way, but in a “you’re really important to me 
         </div>
     </div>
     <footer>
-        <p>Made by Mizuto and Calz(photo)</p>
+        <p>Made by Mizuto and Calz/p>
     </footer>
 
     <!-- CONFETTI LIBRARY -->
@@ -368,6 +420,7 @@ setInterval(updateCountdown,1000);
 updateCountdown();
 
 });
+
 </script>
 
 </body>
